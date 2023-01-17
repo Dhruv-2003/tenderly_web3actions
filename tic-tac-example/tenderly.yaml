@@ -1,0 +1,22 @@
+account_id: ""
+actions:
+  0xdhruv/project:
+    runtime: v2
+    sources: actions
+    specs:
+      newGame:
+        description: Respond to newGame event
+        function: ticTacToeActions:newGameAction
+        trigger:
+          type: transaction
+          transaction:
+            status:
+              - mined
+            filters:
+              - network: 5
+                eventEmitted:
+                  contract:
+                    address: 0xdAF2aba8045B3b1535276C7E1CABb3DF8eF893bA
+                  name: GameCreated
+
+project_slug: "project"

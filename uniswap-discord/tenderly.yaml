@@ -1,0 +1,21 @@
+account_id: ""
+actions:
+  0xdhruv/project:
+    runtime: v1
+    sources: actions
+    specs:
+      uniswapNewPool:
+        description: Runs when a new swap is made on Uniswap
+        function: uniswapActions:onPoolCreatedEventEmitted
+        trigger:
+          type: transaction
+          transaction:
+            status:
+              - mined
+            filters:
+              - network: 1
+                eventEmitted:
+                  contract:
+                    address: 0x1f98431c8ad98523631ae4a59f267346ea31f984
+                  name: PoolCreated
+project_slug: "project"

@@ -1,0 +1,13 @@
+account_id: ""
+actions:
+  our-cool-org/our-cool-project:
+    runtime: v1
+    sources: actions
+    specs:
+      bestActionEver:
+        description: Does the best thing ever
+        function: index:awesomeActionFunction
+        trigger:
+          type: periodic
+          periodic:
+            interval: 5m

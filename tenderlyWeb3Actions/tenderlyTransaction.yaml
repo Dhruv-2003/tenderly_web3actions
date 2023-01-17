@@ -1,0 +1,39 @@
+account_id: ""
+actions:
+  our-cool-org/our-cool-project:
+    runtime: v1
+    sources: actions
+    specs:
+      bestActionEver:
+        description: Does the best thing ever
+        function: index:awesomeActionFunction
+        trigger:
+          type: transaction
+          transaction:
+            status:
+              - mined
+            filters:
+              - network: 1
+                status: mined
+                to: 0x0
+              - network: 42
+                from: 0x0
+                contract:
+                  address: 0x0
+              - network: 5
+                eventEmitted:
+                  contract:
+                    address: 0x0
+                  name: txSubmitted
+              - network: 3
+                logEmitted:
+                  contract:
+                    address: 0x410
+                  startsWith:
+                    - 0x0
+                    - 0x0
+              - network: 0
+                function:
+                  name: verySpecialFunction
+                  contract:
+                    address: 0x0
